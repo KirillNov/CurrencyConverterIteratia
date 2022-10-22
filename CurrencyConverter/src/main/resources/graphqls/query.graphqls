@@ -1,0 +1,42 @@
+type Query {
+    currencies: [Currency]
+
+    currency(charCode: String): Currency
+
+    operationsHistory : [OperationsHistory]
+
+    stats(charCode1: String, charCode2: String): Stats
+
+    date: String
+
+}
+
+type Mutation {
+    saveOperationsHistory(charCode1: String, charCode2: String, sum: String) : OperationsHistory
+}
+
+type Currency {
+    id: ID!,
+    numCode: Int,
+    charCode: String,
+    nominal: Int,
+    name: String,
+    value: Float,
+    date: String
+}
+
+type OperationsHistory {
+    id: ID!
+    charCodeFrom: String,
+    charCodeTo: String,
+    exchangeSum: Float,
+    resultExchange: Float,
+    valueFrom: Float,
+    valueTo: Float,
+    date: String
+}
+
+type Stats {
+    avgRate: Float,
+    sumValue: Float
+}
