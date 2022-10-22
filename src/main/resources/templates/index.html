@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Конвертер валют</title>
+    <script src="js/currency-converter.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="p-3 m-0 border-0 mx-auto container-fluid h-100 w-150">
+    <div class="jumbotron jumbotron-fluid shadow rounded text-center">
+        <h1>КОНВЕРТЕР ВАЛЮТ</h1>
+    </div>
+</div>
+<div class="header_panel">
+    <h6>Дата: <p id="date" class="text-lowercase"></p></h6>
+</div>
+<div class="container-fluid h-100 w-150">
+    <div class="jumbotron jumbotron-fluid shadow rounded text-center">
+        <div class="p-3 m-0 border-0 mx-auto hstack gap-3" style="width: 500px;">
+            <div class="vstack gap-3">
+                <select class="form-select" id="selectFrom"></select>
+                <input id="inputFrom" type="text" class="form-control" placeholder="Введите значение">
+            </div>
+<!--            <img class="icons" src="img/arrow.png">-->
+            <div class="vstack gap-3">
+                <select class="form-select" id="selectTo"></select>
+                <input id="inputTo" type="text" class="form-control" aria-label="readonly input example" readonly>
+            </div>
+        </div>
+        <div class="vstack gap-2 col-md-5 mx-auto" style="width: 400px;">
+            <button type="button" id="convertButton" class="btn btn-secondary" onclick="ConvButtonFun()">Конвертировать</button>
+            <button type="button" id="historyButton" class="btn btn-outline-secondary" onclick="HisButtonFun()">История операций</button>
+            <button type="button" id="statButton" class="btn btn-outline-secondary" onclick="StatButtonFun()">Статистика</button>
+        </div>
+    </div>
+</div>
+<div id="history" class="container-fluid" hidden>
+    <div class="tab-header">История конвертации</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Дата конвертации</th>
+        <th scope="col">Валюта 1</th>
+        <th scope="col">Курс валюты</th>
+        <th scope="col">Валюта 2</th>
+        <th scope="col">Курс валюты</th>
+        <th scope="col">Конвертимая сумма</th>
+        <th scope="col">Результат конвертации</th>
+
+    </tr>
+    </thead>
+    <tbody id="history_body">
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+</div>
+<div id="stats" class="container-fluid" hidden>
+    <div class="tab-header">Статистика</div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Валюта 1</th>
+            <th scope="col">Валюта 2</th>
+            <th scope="col">Средний курс конвертации</th>
+            <th scope="col">Объем конвертаций</th>
+
+        </tr>
+        </thead>
+        <tbody id="stats_body">
+        <tr>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
