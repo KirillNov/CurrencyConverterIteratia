@@ -1,0 +1,2 @@
+# CurrencyConverterIteratia
+Simple currency converter
